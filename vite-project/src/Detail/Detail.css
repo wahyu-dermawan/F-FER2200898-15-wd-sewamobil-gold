@@ -1,0 +1,92 @@
+.about{
+    width: 605px;
+    height: 618px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+    padding:15px 28px;
+}
+p{
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.about ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .about li {
+    font-size: 13px;
+    color: #8A8A8A;
+    font-weight: 700;
+    margin-bottom: 5px; /* Adjust the space between list items */
+  }
+  
+  .about ul li::before {
+    margin-right: 5px;
+    content: ' \2022'; /* Use dot as the list item marker */
+  }
+
+.box-image{
+    padding: 28px 40px;
+    width:405px;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+
+}
+
+.box-image img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 52px;
+}
+
+.car-image-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 70px;
+}
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.total-label {
+    margin-right: 10px; 
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 55px;
+}
+
+.car-price{
+    margin-right: 10px; 
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 55px; 
+}
+
+.capacity-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.capacity{
+  margin-right: 10px; 
+  font-size: 12px;
+  font-weight: 700;
+  color: #8A8A8A;
+  margin-bottom: 60px; 
+}
+
+.box-wrap{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+}

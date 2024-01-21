@@ -1,0 +1,36 @@
+main{
+  max-width: 10000px !important;
+}
+
+.homepage {
+  height: 370px;
+  background-color: #F1F3FF;
+  display: flex;
+  align-items: center;
+}
+
+/* TEXT COMPONENT */
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-top: 50x;
+}
+
+.paragraph {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* IMAGE */
+.carImg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50% !important;
+}
+
+.carImg img {
+  width: 100%;
+}

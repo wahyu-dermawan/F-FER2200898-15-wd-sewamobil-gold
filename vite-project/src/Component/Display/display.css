@@ -1,0 +1,90 @@
+
+:root{
+    --gray1:#F1F3FF;
+    --brand: #0D28A6;
+    --white:#FFF;
+    --button: #5CB85F;
+ 
+ }
+ nav{
+    padding-right: 256px;
+    background-color: var(--gray1);
+ }
+ 
+ main{
+    width: 1440px;
+ }
+ 
+ h1,h2,h3,h4,h5,h6,p{
+    color: #000;
+    font-weight: 700;
+    font-family: Arial;
+ }
+ 
+ a{
+    transition: all 0.4s ease;
+    color:white;
+    text-decoration: none;
+    font-weight: 500;
+ 
+ }
+ 
+ a:hover{
+    color:var(--brand)
+ }
+ 
+ img{
+    width: 100%;
+ }
+ 
+ section{
+    padding-top: 90px;
+    padding-bottom: 90px;
+ }
+ 
+ .navbar-brand{
+    padding-left: 136px;
+ }
+ 
+ .navbar .nav-link{
+    font-size: 14px;
+    background-color: var(--gray1);
+    font-family: Arial;
+    font-weight: 400px;
+    
+    color:#000;
+ }
+ 
+ .navbar-nav{
+    padding-right: 249px;
+ }
+ 
+ .jumbotron{
+    background-color: var(--gray1);
+    height: 500px;
+ }
+ 
+ .col-lg-6{
+    padding-right: 136px;
+ }
+ 
+ .display-1{
+    width: 568px;
+    font-size: 36px;
+    line-height: 54px;
+ }
+ 
+ .lead{
+    width: 468;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+ }
+ 
+ .carImg{
+    width:704px;
+    height: 407px;
+ }
+ 
+ 
+ 

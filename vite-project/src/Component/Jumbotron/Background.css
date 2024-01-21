@@ -1,0 +1,11 @@
+main{
+  max-width: 10000px !important;
+}
+
+.home {
+  height: 200px;
+  background-color: #F1F3FF;
+  display: flex;
+  align-items: center;
+}
+

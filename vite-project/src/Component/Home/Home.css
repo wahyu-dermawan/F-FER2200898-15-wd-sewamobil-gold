@@ -1,0 +1,83 @@
+ 
+  body {
+    
+    display: initial !important;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh !important;
+ }
+  
+  main {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: #000;
+    font-weight: 700;
+    font-family: Arial;
+  }
+  
+  a {
+    transition: all 0.4s ease;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    color: var(--brand);
+  }
+  
+  
+  .jumbotron{
+    background-color: var(--gray1);
+  }
+  
+  .col-lg-6 {
+    padding-right: 1.36rem;
+  }
+  
+  .display-1 {
+    width: 568px;
+    font-size: 36px;
+    line-height: 54px;
+ 
+  }
+  
+  .lead {
+    width: 468px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+  
+  .FAQ{
+       min-height:50vh;
+     }
+
+     .testi-title {
+      text-align: center;
+      align-items: center;
+      margin-top: 20px; /* Adjust the margin-top value as needed */
+    }
+    
+    .testi-title h3 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+    
+    .testi-title p {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 20px;
+      margin-bottom: 40px;
+    }
+    
