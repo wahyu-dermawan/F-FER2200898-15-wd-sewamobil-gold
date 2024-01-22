@@ -24,6 +24,7 @@ const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, on
   const location = useLocation();
   const isDetailRoute = /^\/Detail\/\d+$/.test(location.pathname);
 
+
   return (
     <div className="search-box" style={{ width: "1027px", position: "relative", top: "-190px", borderRadius: "5px", height: "106px", margin: "0 auto", padding: "15px", backgroundColor: "white", boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.15)" }}>
       <div className="row d-flex justify-content-center">
@@ -65,7 +66,7 @@ const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, on
             <Link to="/Result">
               <button
                 className="btn btn-primary"
-                style={{ backgroundColor: "#5CB85F", fontFamily: "arial", fontSize: "12px", fontStyle: "normal", fontWeight: 700, border: "solid" }}
+                style={{ backgroundColor: "white",color:"#0D28A6", fontFamily: "arial", fontSize: "12px", fontStyle: "normal", fontWeight: 700, border: "solid" }}
               >
                 Edit
               </button>

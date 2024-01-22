@@ -28,26 +28,22 @@ const Result = () => {
   const [searchParams, setSearchParams] = useState({});
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [isDarkOverlayVisible, setIsDarkOverlayVisible] = useState(false);
+  const [overlayVisible, setOverlayVisible] = useState(false); // Combine both overlay classes into one state
   const [searchBoxDisabled, setSearchBoxDisabled] = useState(false);
   const [showJumbotron, setShowJumbotron] = useState(true);
   const [showBackground, setBackground] = useState(false);
   const [isButtonDisabledJumbotron, setButtonDisabledJumbotron] = useState(true);
 
   const handleInputChange = () => {
-    setIsDarkOverlayVisible(true);
+    setOverlayVisible(true);
   };
 
   const handleInputFocus = () => {
-    setIsDarkOverlayVisible(true);
+    setOverlayVisible(true);
   };
 
   const handleToggleSearchBox = () => {
     setSearchBoxDisabled((prev) => !prev);
-  };
-
-  const handleButtonJumbotron = () => {
-    setButtonDisabledJumbotron(true);
   };
 
   const handleSubmit = () => {
@@ -56,9 +52,10 @@ const Result = () => {
     const mappedSearchParams = { ...searchParams };
 
     if (searchParams.category) {
-      // Map the category value before sending it in the request
       mappedSearchParams.category = categoryMapping[searchParams.category];
     }
+
+    setOverlayVisible(true);
 
     axios
       .get(LIST_URL, {
@@ -73,19 +70,23 @@ const Result = () => {
       })
       .finally(() => {
         setLoading(true);
-        setIsDarkOverlayVisible(false);
+        setOverlayVisible(false); // Turn off the overlay after the request is complete
         setShowJumbotron(false);
         setBackground(true);
         setButtonDisabledJumbotron(false);
 
         setTimeout(() => {
           setSearchBoxDisabled(true);
-        }, 1000); // Adjust the delay
+        }, 1000);
+
+        setTimeout(() => {
+          setOverlayVisible(false); // Completely remove the overlay after the delay
+        }, 2000); // Adjust the delay
       });
   };
 
   return (
-    <div className={`${isDarkOverlayVisible ? 'dark-overlay' : ''}`}>
+    <div className={`${overlayVisible ? 'dark-overlay overlay-visible' : ''}`}>
       <Navbar />
       {isButtonDisabledJumbotron && showJumbotron && <Jumbotron />}
       {showBackground && <Background />}
@@ -103,7 +104,7 @@ const Result = () => {
         style={{ position: 'relative', maxWidth: '1047px' }}
       />
 
-      {isDarkOverlayVisible && <div className="dark-overlay"></div>}
+      {overlayVisible && <div className="dark-overlay"></div>}
 
       <CarList cars={list} loading={loading} />
 
