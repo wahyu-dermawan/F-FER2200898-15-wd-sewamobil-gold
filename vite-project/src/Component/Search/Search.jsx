@@ -12,6 +12,7 @@ const customStyles = {
     fontStyle: 'normal',
     fontWeight: 300,
     lineHeight: '18px',
+    width:'130%'
   }),
   indicatorSeparator: (provided) => ({
     ...provided,
@@ -21,13 +22,13 @@ const customStyles = {
 
 const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, onInputFocus, disabled, showEditButton }) => {
   const location = useLocation();
-  const isDetailRoute = /^\/Result\/\d+$/.test(location.pathname);
+  const isDetailRoute = /^\/Detail\/\d+$/.test(location.pathname);
 
   return (
     <div className="search-box" style={{ width: "1027px", position: "relative", top: "-190px", borderRadius: "5px", height: "106px", margin: "0 auto", padding: "15px", backgroundColor: "white", boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.15)" }}>
-      <div className="row">
+      <div className="row d-flex justify-content-center">
         {categories.map((category, index) => (
-          <div className={`col-md-3 ${category.label === "Name" ? "mb-3" : "mb-3 mr-3"}`} key={index}>
+          <div className={`col-md-2 m-auto ${category.label === "Name" ? "mb-3" : "mb-3 mr-3"}`} key={index}>
             <label style={{ fontFamily: "sans-serif", fontSize: "12px", fontStyle: "normal", fontWeight: 300, color: " #3C3C3C" }}>{category.label}</label>
             {category.isDropdown ? (
               <Select
@@ -45,7 +46,7 @@ const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, on
               <input
                 type="text"
                 className="form-control"
-                placeholder={`Klik Nama / Tipe Mobil`}
+                placeholder={``}
                 style={{ ...customStyles }}
                 onFocus={onInputFocus}
                 onChange={(e) => {
@@ -59,12 +60,12 @@ const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, on
             )}
           </div>
         ))}
-        <div className="col-md-3 text-right">
+        <div className="col-md-2 m-auto">
           {isDetailRoute && (
             <Link to="/Result">
               <button
                 className="btn btn-primary"
-                style={{ position: "relative", top: "-55px", right: "-1050px", backgroundColor: "#5CB85F", fontFamily: "arial", fontSize: "12px", fontStyle: "normal", fontWeight: 700, border: "solid" }}
+                style={{ backgroundColor: "#5CB85F", fontFamily: "arial", fontSize: "12px", fontStyle: "normal", fontWeight: 700, border: "solid" }}
               >
                 Edit
               </button>
@@ -72,8 +73,8 @@ const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, on
           )}
           {!isDetailRoute && (
             <button
-              className="btn btn-primary"
-              style={{ position: "relative", top: "-55px", right: "-1050px", backgroundColor: "#5CB85F", fontFamily: "arial", fontSize: "12px", fontStyle: "normal", fontWeight: 700, border: "solid" }}
+              className="btn btn-primary "
+              style={{ backgroundColor: "#5CB85F", fontFamily: "arial", fontSize: "12px", fontStyle: "normal", fontWeight: 700, border: "solid" }}
               onClick={showEditButton ? () => { handleSubmit(); showEditButton(false); } : handleSubmit}
               disabled={disabled}
             >
