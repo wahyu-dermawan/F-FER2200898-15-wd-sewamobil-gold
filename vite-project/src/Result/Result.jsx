@@ -91,6 +91,7 @@ const Result = () => {
       {isButtonDisabledJumbotron && showJumbotron && <Jumbotron />}
       {showBackground && <Background />}
 
+    <div>   
       <button onClick={handleToggleSearchBox}>{searchBoxDisabled ? 'Edit' : ''}</button>
       <SearchBox
         categories={categories}
@@ -102,8 +103,9 @@ const Result = () => {
         disabled={searchBoxDisabled}
         className="search-box"
         style={{ position: 'relative', maxWidth: '1047px' }}
+        
       />
-
+      </div>
       {overlayVisible && <div className="dark-overlay"></div>}
 
       <CarList cars={list} loading={loading} />

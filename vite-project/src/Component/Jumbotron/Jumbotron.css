@@ -34,3 +34,9 @@ main{
 .carImg img {
   width: 100%;
 }
+
+@media (max-width: 1200px) {
+  .homepage {
+    height: 500px;
+  }
+}
