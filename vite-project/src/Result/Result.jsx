@@ -102,7 +102,7 @@ const Result = () => {
         onInputFocus={handleInputFocus}
         disabled={searchBoxDisabled}
         className="search-box"
-        style={{ position: 'relative', maxWidth: '1047px' }}
+        style={{ position: 'relative', maxWidth: '1047px', fontSize:'12px'}}
         
       />
       </div>

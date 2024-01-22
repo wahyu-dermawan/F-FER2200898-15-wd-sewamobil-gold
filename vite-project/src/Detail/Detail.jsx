@@ -21,17 +21,18 @@ const categories = [
 const Detail = () => {
   const { id } = useParams();
   const [data, setData] = useState({});
-  const [categoryInfo,setCategoryInfo] = useState("");
-  const [searchBoxDisabled, setSearchBoxDisabled] = useState(false); 
-  const [showBackground,setBackground] = useState(false);
+  const [categoryInfo, setCategoryInfo] = useState('');
+  const [searchBoxDisabled, setSearchBoxDisabled] = useState(false);
+  const [showBackground, setBackground] = useState(false);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
+  // Extracting search parameters from the URL
   const searchParams = {
-    Name: queryParams.get('name') || '',
-    Category: queryParams.get('category') || '',
-    MaxPrice: queryParams.get('maxPrice') || '',
-    Status: queryParams.get('status') || '',
+    name: queryParams.get('name') || '',
+    category: queryParams.get('category') || '',
+    maxprice: queryParams.get('maxprice') || '',
+    status: queryParams.get('status') || '',
   };
 
   console.log("searchParams:", searchParams);
@@ -88,8 +89,8 @@ const Detail = () => {
     <li> Wisata Sudah termasuk pajak</li>
 
     <p> Exclude</p>
-    <li> Tidak termasuk biaya makan sopir Rp</li>
-    <li> 75.000/hari Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam</li>
+    <li> Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
+    <li> Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam</li>
     <li> Tidak termasuk akomodasi penginapan</li>
 
     <p> Refund, Reschedule, Overtime</p>

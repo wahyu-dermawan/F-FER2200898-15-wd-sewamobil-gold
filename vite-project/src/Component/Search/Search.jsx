@@ -47,8 +47,8 @@ const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, on
               <input
                 type="text"
                 className="form-control"
-                placeholder={``}
-                style={ {customStyles, "width":"130%"} }
+                placeholder={category.label === "Nama Mobil" ? "Ketik nama/tipe mobil" : category.label === "Kategori" ? "Masukkan kapasitas mobil" : category.label === "Harga Maksimum" ? "Masukkan harga sewa" : category.label === "Status" ? "Disewa" : ""}
+                style={{ ...customStyles, "width": "130%",fontSize: "12px" }}
                 onFocus={onInputFocus}
                 onChange={(e) => {
                   setSearchParams({
