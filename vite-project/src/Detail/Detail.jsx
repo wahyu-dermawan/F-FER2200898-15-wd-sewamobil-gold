@@ -13,10 +13,10 @@ import "./Detail.css"
 const URL = "https://api-car-rental.binaracademy.org/admin/car";
 
 const categories = [
-  { label: 'Name', isDropdown: false },
-  { label: 'Category', isDropdown: true, options: ['', 'Small', 'Medium', 'Large'] },
-  { label: 'MaxPrice', isDropdown: false, placeholder: 'Pilih Harga Maksimum' },
-  { label: 'Status', isDropdown: true, options: ['', 'True', 'False'] },
+  { label: 'Nama Mobil', isDropdown: false, input:"name" },
+  { label: 'Categori', isDropdown: true, options: ['small', 'medium', 'large'], input: "category" },
+  { label: 'Harga Maksimum', isDropdown: false,input:"maxprice", placeholder: 'Pilih Harga Maksimum' },
+  { label: 'Tersedia', isDropdown: true,input:"status", options: ['', 'True', 'False'] },
 ];
 const Detail = () => {
   const { id } = useParams();
@@ -48,11 +48,11 @@ const Detail = () => {
         //data maniputaion for category
         const category = response.data.category.toLowerCase();
         if (category === "small"){
-          setCategoryInfo("4-5 orang");
+          setCategoryInfo("2-4 orang");
         }else if(category ==="medium"){
-          setCategoryInfo("6-8 orang");
+          setCategoryInfo("4-6 orang");
         }else if(category === "large"){
-          setCategoryInfo("8-10 orang");
+          setCategoryInfo("6-8 orang");
         }else{
           setCategoryInfo("undifed")
         }

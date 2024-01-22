@@ -28,7 +28,7 @@ const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, on
     <div className="search-box" style={{ width: "1027px", position: "relative", top: "-190px", borderRadius: "5px", height: "106px", margin: "0 auto", padding: "15px", backgroundColor: "white", boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.15)" }}>
       <div className="row d-flex justify-content-center">
         {categories.map((category, index) => (
-          <div className={`col-md-2 m-auto ${category.label === "Name" ? "mb-3" : "mb-3 mr-3"}`} key={index}>
+          <div className={`col-md-2 m-auto ${category.input === "Name" ? "mb-3" : "mb-3 mr-3"}`} key={index}>
             <label style={{ fontFamily: "sans-serif", fontSize: "12px", fontStyle: "normal", fontWeight: 300, color: " #3C3C3C" }}>{category.label}</label>
             {category.isDropdown ? (
               <Select
@@ -37,7 +37,7 @@ const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, on
                 onChange={(selectedOption) => {
                   setSearchParams({
                     ...searchParams,
-                    [category.label.toLowerCase()]: selectedOption.value,
+                    [category.input.toLowerCase()]: selectedOption.value,
                   });
                 }}
                 isDisabled={disabled}
@@ -47,12 +47,12 @@ const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, on
                 type="text"
                 className="form-control"
                 placeholder={``}
-                style={{ ...customStyles }}
+                style={ {customStyles, "width":"130%"} }
                 onFocus={onInputFocus}
                 onChange={(e) => {
                   setSearchParams({
                     ...searchParams,
-                    [category.label.toLowerCase()]: e.target.value,
+                    [category.input.toLowerCase()]: e.target.value,
                   });
                 }}
                 disabled={disabled}
@@ -90,7 +90,7 @@ const SearchBox = ({ categories, searchParams, setSearchParams, handleSubmit, on
 SearchBox.propTypes = {
   categories: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string.isRequired,
+      input: PropTypes.string.isRequired,
       isDropdown: PropTypes.bool.isRequired,
       options: PropTypes.arrayOf(PropTypes.string),
     })
